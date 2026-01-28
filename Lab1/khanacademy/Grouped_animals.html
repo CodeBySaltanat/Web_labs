@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Challenge: Grouped animals</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+
+            p {
+                font-family: sans-serif;
+            }
+            
+            img {
+                max-width: 150px;
+                border-radius: 10px; /* Добавил небольшое скругление для красоты */
+                margin: 5px;
+            }
+            
+            /* Группировка обычных селекторов h1 и h2 */
+            h1, h2 {
+                font-family: fantasy;
+                border-bottom: 1px solid rgb(230, 230, 230);
+                padding: 3px;
+            }
+            
+            /* Группировка селекторов с псевдоклассом :hover */
+            h1:hover, h2:hover {
+                background-color: rgb(248, 255, 199);
+                cursor: pointer;
+            }
+            
+            a {
+                color: #007c89;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            /* Бонус: добавим эффект и для ссылки */
+            a:hover {
+                text-decoration: underline;
+            }
+            
+        </style>
+    </head>
+    <body>
+        
+        <h1>Animal group names</h1>
+        
+        <p>For many species of animals, there are names that we use to refer to a group of them - like a flock of birds. Here are a few you might not know.</p>
+        
+        <h2>A skulk of foxes</h2>
+
+        <p>Also called a "leash."</p>
+        
+        <img src="https://www.kasandbox.org/programming-images/animals/fox.png" alt="Fox">
+        <img src="https://www.kasandbox.org/programming-images/animals/fox.png" alt="Fox">
+        
+        <h2>A clowder of cats</h2>
+        
+        <p>Also called a "pounce", "glaring", "kindle", or "clutter."</p>
+        
+        <img src="https://www.kasandbox.org/programming-images/animals/cat.png" alt="Cat">
+        <img src="https://www.kasandbox.org/programming-images/animals/cat.png" alt="Cat">
+        
+        <p>
+            <a href="http://en.wikipedia.org/wiki/List_of_animal_names">Learn more on Wikipedia</a>
+        </p>
+    </body>
+</html>
