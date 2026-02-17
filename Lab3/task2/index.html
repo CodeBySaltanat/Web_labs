@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header__title">ToDo List</h1>
+  </header>
+
+  <main class="main">
+    <section class="card">
+      <h2 class="card__title">ToDo List</h2>
+
+      <form class="form" id="todoForm">
+        <div class="form__row">
+          <input
+            type="text"
+            id="taskInput"
+            class="form__input"
+            placeholder="New Task"
+            autocomplete="off"
+          />
+          <button type="submit" class="form__button">Add</button>
+        </div>
+      </form>
+
+      <ul class="list" id="taskList"></ul>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
