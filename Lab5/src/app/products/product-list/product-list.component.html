@@ -1,0 +1,16 @@
+<section class="list">
+  @if (displayed.length === 0) {
+    <p class="empty">No products in this category.</p>
+  } @else {
+    @for (p of displayed; track p.id) {
+      <app-product-item
+        [product]="p"
+        [isFavorite]="favoritesMode"
+        (delete)="onDelete($event)"
+        (like)="onLike($event)"
+        (addToFavorites)="onAdd($event)"
+        (removeFromFavorites)="onRemove($event)"
+      ></app-product-item>
+    }
+  }
+</section>

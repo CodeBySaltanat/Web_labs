@@ -1,0 +1,21 @@
+<header class="header" *ngIf="albumId !== null">
+  <h2>Album #{{ albumId }} Photos</h2>
+  <a class="btn" [routerLink]="['/albums', albumId]">Back</a>
+</header>
+
+<div *ngIf="isLoading" class="state">Loading photos...</div>
+<div *ngIf="!isLoading && error" class="state error">{{ error }}</div>
+
+<div *ngIf="!isLoading && !error && photos.length === 0" class="state">
+  No photos found.
+</div>
+
+<section *ngIf="!isLoading && !error && photos.length > 0" class="grid">
+  <figure class="tile" *ngFor="let p of photos">
+    <img
+    [src]="p.thumbnailUrl"
+    [alt]="p.title"
+    loading="lazy"/>
+    <figcaption class="caption">{{ p.title }}</figcaption>
+  </figure>
+</section>

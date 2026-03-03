@@ -1,0 +1,34 @@
+<header class="header">
+  <h2>Albums</h2>
+  <button class="btn" (click)="reload()">Reload</button>
+</header>
+
+<div *ngIf="isLoading" class="state">Loading albums...</div>
+<div *ngIf="!isLoading && error" class="state error">{{ error }}</div>
+
+<ng-container *ngIf="albums$ | async as albums">
+  <div *ngIf="!isLoading && !error && albums.length === 0" class="state">
+    No albums found.
+  </div>
+
+  <ul *ngIf="!isLoading && !error && albums.length > 0" class="list">
+    <li
+      class="item"
+      *ngFor="let album of albums"
+      [routerLink]="['/albums', album.id]"
+    >
+      <div class="meta">
+        <div class="id">#{{ album.id }}</div>
+        <div class="title">{{ album.title }}</div>
+      </div>
+
+      <button
+        class="danger"
+        (click)="deleteAlbum(album.id, $event)"
+        [disabled]="deletingIds.has(album.id)"
+      >
+        {{ deletingIds.has(album.id) ? 'Deleting...' : 'Delete' }}
+      </button>
+    </li>
+  </ul>
+</ng-container>

@@ -1,0 +1,125 @@
+.card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.imageWrap {
+  display: block;
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.likes {
+  flex: none;
+  font-weight: 600;
+  color: red;
+  white-space: nowrap;
+}
+
+.desc {
+  margin: 0;
+  color: #444;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.meta {
+  display: grid;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.metaRow {
+  display: flex;
+  gap: 6px;
+}
+
+.label {
+  color: #666;
+}
+
+.value {
+  font-weight: 600;
+}
+
+.reviews {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.reviews:hover {
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.btn {
+  border: 1px solid #e50000;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: #f2f2f2;
+}
+
+.danger {
+  border-color: #ffcccc;
+  background: #fff2f2;
+}
+
+.danger:hover {
+  background: #ffe6e6;
+}
+
+@media (max-width: 640px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .imageWrap {
+    width: 100%;
+    height: 200px;
+  }
+}

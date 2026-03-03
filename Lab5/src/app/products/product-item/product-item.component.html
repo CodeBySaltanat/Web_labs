@@ -1,0 +1,45 @@
+<article class="card">
+  <a class="imageWrap" [href]="product.link" target="_blank" rel="noopener">
+    <img class="image" [src]="product.image" [alt]="product.name" loading="lazy"/>
+  </a>
+
+  <div class="content">
+    <div class="header">
+      <h3 class="title">{{ product.name }}</h3>
+      <span class="likes" title="Likes">❤ {{ product.likes }}</span>
+    </div>
+
+    <p class="desc">{{ product.description }}</p>
+
+    <div class="meta">
+      <div class="metaRow">
+        <span class="label">Price:</span>
+        <span class="value">{{ product.price || '—' }} ₸</span>
+      </div>
+      <div class="metaRow">
+        <span class="label">Rating:</span>
+        <span class="value">{{ product.rating || '—' }}</span>
+      </div>
+      <div class="metaRow">
+        <a class="reviews" [href]="product.commentsLink" target="_blank" rel="noopener">
+          Reviews ({{ product.commentsNumber || 0 }})
+        </a>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn" (click)="likeItem()">Like</button>
+      <button type="button" class="btn danger" (click)="requestDelete()">Delete</button>
+      <button type="button" class="btn" (click)="shareToWhatsApp()">WhatsApp</button>
+      <button type="button" class="btn" (click)="shareToTelegram()">Telegram</button>
+      @if (!isFavorite) {
+        <button class="btn fav" (click)="onAdd()">⭐ Add to Favorites</button>
+      } @else {
+        <button class="btn remove" (click)="onRemove()">⭐ Remove</button>
+      }
+      
+    </div>
+  </div>
+
+      
+</article>

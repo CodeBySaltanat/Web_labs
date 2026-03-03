@@ -1,0 +1,28 @@
+<div class="search-container">
+  <label for="search">Search products</label>
+  <input
+    id="search"
+    type="text"
+    placeholder="Search by product name..."
+    [(ngModel)]="searchQuery"
+    (input)="filterProducts()"
+  />
+</div>
+
+<p class="empty" [hidden]="filteredProducts.length !== 0">
+  No products found matching "{{ searchQuery }}"
+</p>
+
+<app-product-card
+*ngFor="let product of filteredProducts"
+[image]="product.image"
+[name]="product.name"
+[description]="product.description"
+[price]="product.price"
+[link]="product.link"
+[rating]="product.rating"
+[commentsLink]="product.commentsLink"
+[commentsNumber]="product.commentsNumber"
+></app-product-card>
+
+<router-outlet></router-outlet>
