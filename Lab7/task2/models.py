@@ -45,3 +45,4 @@ class Cat(Animal):
 
     def __str__(self):
         return f"Cat(name={self.name}, age={self.age}, color={self.color}, indoor={self.indoor})"
+    
